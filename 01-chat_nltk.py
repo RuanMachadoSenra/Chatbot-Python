@@ -44,3 +44,7 @@ sentencas = [
         ['Até breve', 'Foi bom conversar com você.']
     ]
 ]
+
+print("Olá, sou o TwBot")
+chat = Chat(sentencas, expressoes_pt)
+chat.converse()
