@@ -55,3 +55,24 @@ def resposta(texto_usuario):
     else:
         resposta_bot = resposta_bot + texto_principal[indice_similaridade]
         return resposta_bot
+
+def main():
+    continuar = True
+    print("Olá sou o TwBot e vou te ajudar com algumas perguntas.")
+    while(continuar):
+        texto_usuario = input()
+        texto_usuario = texto_usuario.lower()
+        print(texto_usuario)
+
+        if(texto_usuario != 'sair'):
+            if(mensagem_inicio(texto_usuario) != None):
+                print("TwBot:" + mensagem_inicio(texto_usuario))
+            else:
+                print("TwBot:")
+                print(resposta(texto_usuario))
+                texto_principal.remove(texto_usuario)
+        else:
+            continuar = False
+            print("TwBot: Até Breve!")
+
+main()
