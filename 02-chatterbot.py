@@ -30,3 +30,13 @@ sentenca = [
 
 treino = ListTrainer(chatbot)
 treino.train(sentenca)
+
+while True:
+    mensagem = input("Envie uma mensagem \n")
+    if mensagem.lower() == "sair":
+        break
+    resposta = chatbot.get_response(mensagem)
+    if float(resposta.confidence) > 0.4:
+        print("BotTw: " , resposta)
+    else:
+        print("BotTw: Ainda não sei responder essa pergunta")
