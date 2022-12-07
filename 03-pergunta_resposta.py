@@ -11,5 +11,11 @@ noticia = g.extract(url)
 
 texto = noticia.cleaned_text
 
-print(texto)
+# -- Boas Vindas -- #
+boas_vindas_usuario = ('olá', 'opa', 'eae', 'oi')
+boas_vindas_bot = ('olá', 'opa', 'bem-vindo', 'oi', 'como posso ajudá-lo?')
 
+def mensagem_inicio(texto):
+    for palavra in texto.split():
+        if palavra.lower() in boas_vindas_usuario:
+            return(random.choice(boas_vindas_bot))
